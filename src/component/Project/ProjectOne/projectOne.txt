@@ -1,0 +1,16 @@
+Project One:
+
+Intro:
+This is my bachelors project, as a group of three we made a drone surveillance project. 
+
+How it went down:
+Maybe a timeline?
+Project architecture, risk analysis
+
+git
+
+Skills used:
+Python CV YOLO
+
+Results:
+The project further developed my skills in computervision, python and made me better and getting good at writing code

@@ -1,0 +1,53 @@
+/* Add this CSS to your stylesheet */
+.project-card {
+    --b: 100 px; /* border width */
+    --c: 3em; /* corner size */
+    --r: 0; /* no corner rounding */
+    position: relative;
+    margin: 1em auto;
+    padding: 1em;
+    max-width: 23em;
+    font: 1.25em 'Ubuntu', sans-serif; /* Ensure you have this font loaded */
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        inset: calc(-1 * var(--b));
+        border: inherit;
+        border-radius: 0; /* No rounding */
+        background: linear-gradient(orange, deeppink, purple) border-box;
+        
+        /* Create the corner effect */
+        --corner: conic-gradient(from -90deg at var(--c) var(--c), red 25%, #0000 0) 
+            0 0/ calc(100% - var(--c)) calc(100% - var(--c)) border-box;
+        
+        --inner: conic-gradient(red 0 0) padding-box;
+        mask: var(--corner) subtract, var(--inner);
+        content: '';
+    }
+
+    /* Add styles for specific corners */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: var(--b);
+        width: var(--b);
+        background-color: transparent;
+        z-index: -1;
+        border-top-left-radius: var(--r);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: var(--b);
+        width: var(--b);
+        background-color: transparent;
+        z-index: -1;
+        border-bottom-right-radius: var(--r);
+    }
+}
