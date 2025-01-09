@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectOneIntro from './ProjectOneIntro'
+import ProjectIntro from './component/Project/ProjectOne/ProjectIntro';
 
 const ProjectOne = () => {
   return (
@@ -7,6 +7,7 @@ const ProjectOne = () => {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-left mb-8">Project 1</h2>
         <div className="space-y-10">
+        <ProjectIntro />
         </div>
       </div>
     </section>
