@@ -1,19 +1,20 @@
-// ProjectsSection.js
-import droneImage from './drone.jpg'; // Import the image
 
-const project = [
+const projects = [
   {
-    title: 'TekoDetect (Bachelor)',
-    description: 'As a part of my bachelor I made the following project TekoDetect, which is a drone surviallance project. The project included Computer vision and antenna control making our own antenna.',
-    imageUrl: droneImage,
-    link: '/project-one',
+    title: 'TekoDetect',
+    skills: ['Python.js', 'C++', 'OpenCV', 'YOLOv8'],
+    image: '/path-to-image1.jpg',
   },
   {
-    title: 'YoutubeMinimalism',
-    description: 'Youtube minimalism is a personal project designed to give you more control when you browse youtube, and to avoid the clickbaity thumbnails. Enabling youtube minimalism allows you to disable a lot of features designed to take your time.',
-    imageUrl: droneImage,
-    link: '/project-two',
+    title: 'Project Two',
+    skills: ['ReactJS', 'Redux', 'Tailwind CSS'],
+    image: '/path-to-image2.jpg',
+  },
+  {
+    title: 'Project Three',
+    skills: ['Next.js', 'TypeScript', 'Node.js'],
+    image: '/path-to-image3.jpg',
   },
 ];
 
-export default project;
+export default projects;

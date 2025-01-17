@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white fixed top-0 left-0 w-full z-50 shadow">
+    <nav className="bg-white fixed top-0 left-0 w-full z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold">
           <a href="/">Peter Schultz-Johansen</a>

@@ -6,8 +6,6 @@ import Project from './component/Project/projectSection';
 import About from './component/About/about';
 import Contact from './component/Contact/contact';
 import Skill from './component/skills/skillsSection';
-import ProjectOne from './component/Project/ProjectOne/ProjectOne';
-import ProjectIntro from './component/Project/ProjectOne/projectIntro';
 
 function App() {
   return (
@@ -21,12 +19,6 @@ function App() {
               <Project />
               <Skill />
               <About />
-            </>
-          } />
-          <Route path="/project-one" element={
-            <>
-              <ProjectOne />
-              <projectIntro />
             </>
           } />
           <Route path="*" element={<div>Path: {window.location.pathname}</div>} />
