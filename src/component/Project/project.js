@@ -1,19 +1,25 @@
+import exampleImage from './drone.jpg';
 
 const projects = [
   {
     title: 'TekoDetect',
     skills: ['Python.js', 'C++', 'OpenCV', 'YOLOv8'],
-    image: '/path-to-image1.jpg',
+    image: exampleImage,
   },
   {
-    title: 'Project Two',
+    title: 'Youtube Minimalist',
     skills: ['ReactJS', 'Redux', 'Tailwind CSS'],
-    image: '/path-to-image2.jpg',
+    image: exampleImage,
   },
   {
-    title: 'Project Three',
+    title: 'Test',
     skills: ['Next.js', 'TypeScript', 'Node.js'],
-    image: '/path-to-image3.jpg',
+    image: exampleImage,
+  },
+  {
+    title: 'TEST',
+    skills: ['Next.js', 'TypeScript', 'Node.js'],
+    image: exampleImage,
   },
 ];
 

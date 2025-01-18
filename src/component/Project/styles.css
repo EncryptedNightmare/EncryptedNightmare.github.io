@@ -51,3 +51,40 @@
         border-bottom-right-radius: var(--r);
     }
 }
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes colorEndCircle {
+  from {
+    stroke: #888;
+  }
+  to {
+    stroke: #FFB200;
+  }
+}
+
+.grey {
+  stroke: #ddd;
+}
+
+.orange {
+  stroke: none;
+}
+
+.orange-active {
+  stroke: #FFB200;
+  transition: stroke 1s ease;
+}
+
+.circle {
+  stroke: #ddd;
+}
+
+.circle-active {
+  stroke: #FFB200;
+  transition: stroke 1s ease;
+}
