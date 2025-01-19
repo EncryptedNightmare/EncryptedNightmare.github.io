@@ -1,0 +1,46 @@
+#projects {
+  height: 100vh;
+  display: flex;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+}
+
+.project-names {
+  width: 30%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-title {
+  position: relative;
+  font-size: 40px;
+  font-weight: lighter;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.project-title:hover {
+  color: #888;
+}
+
+.project-skills {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.project-skill {
+  padding: 4px 8px;
+  background-color: #ffb200;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
