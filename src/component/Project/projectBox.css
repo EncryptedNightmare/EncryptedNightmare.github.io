@@ -12,7 +12,7 @@
     width: 0;
   }
   to {
-    width: 100%;
+    width: char;
   }
 }
 
@@ -37,6 +37,17 @@
   }
 }
 
+@keyframes popUp {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .loading-container {
   width: 100%;
   height: 100%;
@@ -50,15 +61,25 @@
   transform: translate(-50%, -50%);
 }
 
+.loading-box {
+  width: 80%;
+  max-width: 310px;
+  padding: 5px;
+  border: 1px solid #000; /* Add border to create box */
+  background-color: #fff; /* Background color for the box */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .loading-bar {
   width: 0; /* Start with width 0 */
   max-width: 300px;
   height: 20px;
-  background-color: #fff;
-  border: 2px solid #fff;
-  padding: 5px; /* Add padding to create space inside the element */
+  background-color: #000;
   animation: loadBar 3s forwards; /* Animate width from 0 to 100% */
-  margin-bottom: 20px;
+  align-self: flex-start; /* Ensure the bar starts from the left */
 }
 
 .typing-text {
@@ -67,9 +88,9 @@
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid;
-  width: auto;
-  animation: none; /* Initially no animation */
-  color: #fff;
+  width: 0; /* Start with width 0 */
+  animation: typing 1.5s steps(30, end) forwards, blink 1s step-end infinite 1.5s; /* Animate text writing and blink */
+  color: #000;
 }
 
 .typing-text.blink {
@@ -90,10 +111,14 @@
   overflow: hidden; /* Ensure the image does not overflow the box */
 }
 
+.project-box-container.hovered {
+  background-color: #000; /* Change background color on hover */
+}
+
 .project-box {
   width: 70%;
   height: 70%;
-  background-color: #000;
+  background-color: none;
   border-radius: 10px;
   position: relative;
   display: flex;
@@ -109,6 +134,7 @@
   border-radius: 10px;
   transition: transform 0.5s ease;
   transform: scale(1);
+  animation: popUp 0.5s ease forwards; /* Add pop-up animation */
 }
 
 .project-image:hover {

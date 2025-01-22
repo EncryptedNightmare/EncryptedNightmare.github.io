@@ -27,21 +27,35 @@ const ProjectBox = ({ projects, hoveredIndex, boxRef }) => {
 
       return () => clearTimeout(timer);
     } else if (!loading) {
-      setText('Select a project...');
+      setText('Select a project:');
       setShowImage(false);
     }
-  }, [hoveredIndex, loading]);
+  }, [hoveredIndex, loading, projects]);
+
+  useEffect(() => {
+    const typingText = document.querySelector('.typing-text');
+    if (typingText) {
+      typingText.style.animation = 'none';
+      typingText.style.width = '0'; // Reset width
+      const reflow = typingText.offsetHeight; // Trigger reflow
+      typingText.style.width = `${typingText.textContent.length}ch`; // Set width based on text length
+      typingText.style.animation = 'typing 1.5s steps(30, end) forwards, blink 1s step-end infinite 1.5s'; // Animate text writing and blink
+    }
+  }, [text]);
 
   return (
-    <div className="project-box-container">
+    <div
+      className="project-box-container">
       <div ref={boxRef} className="project-box">
         <div className="loading-container">
           {loading && (
             <>
-              <div className="loading-bar"></div>
-              <div className="typing-text">
-                Loading<span className="dots"></span>
+              <div className="loading-box">
+                <div className="loading-bar"></div>
               </div>
+              <span className="loading-text">
+                Loading<span className="dots"></span>
+              </span>
             </>
           )}
           {!loading && <div className={`typing-text ${!loading ? 'blink' : ''}`}>{text}</div>}
