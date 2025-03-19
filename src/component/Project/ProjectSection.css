@@ -55,33 +55,45 @@
 .custom-cursor {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
+  background: url('./cursor.svg') no-repeat center center;
+  background-size: contain;
+  position: fixed; /* Use fixed positioning to follow the cursor accurately */
   pointer-events: none;
-  transform: translate(-50%, -50%);
   display: none; /* Initially hidden */
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.custom-cursor::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 12px solid #fff; /* Color of the arrow */
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Center the custom cursor around the cursor */
 }
 
 body.hovered .custom-cursor {
   display: block; /* Show the custom cursor when hovered */
 }
 
-.important:hover .custom-cursor {
-  background-color: rgba(255, 0, 0, 0.5); /* Change color on hover */
-  transform: translate(-50%, -50%) scale(1.2); /* Scale up on hover */
+.lightning-wrapper {
+  position: fixed; /* Use fixed positioning to follow the cursor accurately */
+  width: 80px; /* Adjust size to be larger than the cursor */
+  height: 80px; /* Adjust size to be larger than the cursor */
+  pointer-events: none;
+  display: none; /* Initially hidden */
+  transform: translate(-50%, -50%); /* Center the lightning wrapper around the cursor */
+}
+
+body.hovered .lightning-wrapper {
+  display: block; /* Show the lightning effect when hovered */
+}
+
+.lightning {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  animation: lightning 0.6s;
+}
+
+/* Lightning animation */
+@keyframes lightning {
+  0% { content: url('./lightning1.svg'); }
+  20% { content: url('./lightning2.svg'); }
+  40% { content: url('./lightning3.svg'); }
+  60% { content: url('./lightning4.svg'); }
+  80% { content: url('./lightning5.svg'); }
+  100% { content: url('./lightning1.svg'); }
 }

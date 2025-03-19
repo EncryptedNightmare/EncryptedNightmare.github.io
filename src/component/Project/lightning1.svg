@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128.319mm"
+   height="120.05042mm"
+   viewBox="0 0 128.319 120.05042"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter8741"
+       x="-0.069489785"
+       y="-0.043002646"
+       width="1.1389796"
+       height="1.0860053">
+      <feGaussianBlur
+         stdDeviation="1.7415252"
+         id="feGaussianBlur8743" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter8967"
+       x="-0.014069049"
+       y="-0.0082997261"
+       width="1.028138"
+       height="1.0165995">
+      <feGaussianBlur
+         stdDeviation="0.31426755"
+         id="feGaussianBlur8969" />
+    </filter>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-4.5536681,-4.9454983)">
+    <g
+       id="g8973"
+       transform="translate(-74.429151,-189.54007)">
+      <path
+         style="fill:#ffb208;fill-opacity:0.996078;stroke-width:0.264583;filter:url(#filter8741)"
+         d="m 141.43459,203.10791 -15.03696,-0.8717 -10.02464,5.6661 -7.62744,10.02463 -9.370863,4.7944 -2.83305,16.56245 -12.203909,13.72939 4.140613,16.34452 3.48683,21.13891 3.050976,4.7944 -6.755733,-5.01232 v -9.15293 l -3.922686,-11.3322 -2.615123,-16.34452 -0.435853,-8.28123 11.985982,-7.62744 1.30756,-15.47281 6.755736,-3.48683 6.75573,-5.01232 4.7944,-7.40952 7.40951,-3.2689 9.15294,-4.7944 z"
+         id="path8739" />
+      <path
+         style="fill:#ffffff;fill-opacity:0.996078;stroke-width:0.264583;filter:url(#filter8967)"
+         d="m 90.875537,290.49662 -1.52549,-8.28122 -1.961343,-12.63978 -4.140613,-15.90866 2.615124,-4.79439 7.409516,-7.84537 4.358539,-9.37086 0.871709,-8.49915 3.486831,-2.17927 8.71708,-7.40952 6.75573,-7.84537 10.4605,-4.57646 7.62744,0.65378 -6.31988,-2.17927 -12.20391,4.14061 -5.88403,5.88403 -6.75573,6.75573 -8.93501,5.88403 -1.30756,10.4605 -3.050977,4.79439 -4.358539,6.75573 -4.794393,5.6661 1.089634,12.63977 z"
+         id="path8745" />
+    </g>
+  </g>
+</svg>
