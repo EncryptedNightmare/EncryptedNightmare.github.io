@@ -5,7 +5,6 @@ import Hero from './component/hero/hero';
 import Project from './component/Project/projectSection';
 import About from './component/About/about';
 import Contact from './component/Contact/contact';
-import Skill from './component/skills/skillsSection';
 
 function App() {
   return (
@@ -16,14 +15,13 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
-              <Project />
-              <Skill />
               <About />
+              <Project />
+              <Contact />
             </>
           } />
           <Route path="*" element={<div>Path: {window.location.pathname}</div>} />
         </Routes>
-        <Contact />
       </> 
     </Router>
   );

@@ -28,6 +28,7 @@
   color: #888;
 }
 
+
 .project-skills {
   position: absolute;
   top: -20px;
@@ -49,18 +50,7 @@
 /* Custom cursor styles */
 .project-names:hover,
 .project-title:hover {
-  cursor: none; /* Hide the default cursor */
-}
-
-.custom-cursor {
-  width: 40px;
-  height: 40px;
-  background: url('./cursor.svg') no-repeat center center;
-  background-size: contain;
-  position: fixed; /* Use fixed positioning to follow the cursor accurately */
-  pointer-events: none;
-  display: none; /* Initially hidden */
-  transform: translate(-50%, -50%); /* Center the custom cursor around the cursor */
+  cursor: url('./cursor.svg') 4 4, auto; /* Hide the default cursor */
 }
 
 body.hovered .custom-cursor {
@@ -68,32 +58,22 @@ body.hovered .custom-cursor {
 }
 
 .lightning-wrapper {
-  position: fixed; /* Use fixed positioning to follow the cursor accurately */
-  width: 80px; /* Adjust size to be larger than the cursor */
-  height: 80px; /* Adjust size to be larger than the cursor */
+  position: fixed;
+  width: 100px;
+  height: 100px;
   pointer-events: none;
-  display: none; /* Initially hidden */
-  transform: translate(-50%, -50%); /* Center the lightning wrapper around the cursor */
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+  animation: lightning 1s infinite;
 }
 
-body.hovered .lightning-wrapper {
-  display: block; /* Show the lightning effect when hovered */
-}
-
-.lightning {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  animation: lightning 0.6s;
-}
-
-/* Lightning animation */
 @keyframes lightning {
-  0% { content: url('./lightning1.svg'); }
-  20% { content: url('./lightning2.svg'); }
-  40% { content: url('./lightning3.svg'); }
-  60% { content: url('./lightning4.svg'); }
-  80% { content: url('./lightning5.svg'); }
-  100% { content: url('./lightning1.svg'); }
+  0% { background-image: url('./lightning1.svg'); }
+  20% { background-image: url('./lightning2.svg'); }
+  40% { background-image: url('./lightning3.svg'); }
+  60% { background-image: url('./lightning4.svg'); }
+  80% { background-image: url('./lightning5.svg'); }
+  100% { background-image: url('./lightning1.svg'); }
 }
+

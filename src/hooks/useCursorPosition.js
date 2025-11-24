@@ -15,6 +15,7 @@ const useCursorPosition = () => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      handleMouseMove.cancel?.(); // Prevent queued calls after unmount
     };
   }, [handleMouseMove]);
 

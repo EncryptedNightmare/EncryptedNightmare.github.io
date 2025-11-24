@@ -1,24 +1,15 @@
-import exampleImage from './drone.jpg';
+import exampleImage from '../../Assets/Images/notfound.jpg';
+
 
 const projects = [
   {
-    title: 'TekoDetect',
-    skills: ['Python.js', 'C++', 'OpenCV', 'YOLOv8'],
+    title: 'Bachelor Project - Teko Detect',
+    skills: ['Python', 'C++', 'OpenCV', 'YOLOv8'],
     image: exampleImage,
   },
   {
-    title: 'Youtube Minimalist',
-    skills: ['ReactJS', 'Redux', 'Tailwind CSS'],
-    image: exampleImage,
-  },
-  {
-    title: 'Test',
-    skills: ['Next.js', 'TypeScript', 'Node.js'],
-    image: exampleImage,
-  },
-  {
-    title: 'TEST',
-    skills: ['Next.js', 'TypeScript', 'Node.js'],
+    title: 'YouTube Minimalist',
+    skills: ['JavaScript', 'DOM manipulation', 'Chrome Extensions'],
     image: exampleImage,
   },
 ];

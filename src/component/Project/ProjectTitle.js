@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import typingEffect from '../../utils/typingEffect';
 
-const ProjectTitle = ({ project, index, hoveredIndex, setHoveredIndex, observe, titleRef }) => {
+const ProjectTitle = ({ project, index, hoveredIndex, setHoveredIndex, observe, titleRef, isVisible }) => {
   const localTitleRef = useRef(null);
-  const [effectApplied, setEffectApplied] = useState(false);
+  const [displayText, setDisplayText] = useState(project.title);
 
   useEffect(() => {
     if (localTitleRef.current) {
@@ -15,26 +15,10 @@ const ProjectTitle = ({ project, index, hoveredIndex, setHoveredIndex, observe, 
   }, [observe, titleRef]);
 
   useEffect(() => {
-    if (localTitleRef.current) {
-      const handleIntersection = (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !effectApplied) {
-            typingEffect(entry.target, project.title);
-            setEffectApplied(true);
-          } else if (!entry.isIntersecting && effectApplied) {
-            setEffectApplied(false);
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(handleIntersection, { threshold: 0.1 });
-      observer.observe(localTitleRef.current);
-
-      return () => {
-        observer.disconnect();
-      };
+    if (isVisible) {
+      typingEffect(project.title, setDisplayText); // refactored typingEffect to set state instead of DOM
     }
-  }, [effectApplied, project.title]);
+  }, [isVisible, project.title]);
 
   return (
     <div
@@ -44,7 +28,7 @@ const ProjectTitle = ({ project, index, hoveredIndex, setHoveredIndex, observe, 
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
     >
-      {hoveredIndex === index && (
+      {hoveredIndex === index && Array.isArray(project.skills) && (
         <div className="project-skills">
           {project.skills.map((skill, skillIndex) => (
             <span key={skillIndex} className="project-skill">
@@ -53,7 +37,7 @@ const ProjectTitle = ({ project, index, hoveredIndex, setHoveredIndex, observe, 
           ))}
         </div>
       )}
-      {project.title}
+      {displayText}
     </div>
   );
 };

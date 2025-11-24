@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import './projectBox.css';
 
-const ProjectBox = ({ projects, hoveredIndex, boxRef }) => {
+const ProjectBox = ({ projects = [], hoveredIndex, boxRef }) => {
   const [loading, setLoading] = useState(true);
   const [text, setText] = useState('Loading...');
   const [showImage, setShowImage] = useState(false);
 
   useEffect(() => {
     const fakeLoadingDuration = 3000;
-
     const timer = setTimeout(() => {
       setLoading(false);
       setText('Select a project...');
     }, fakeLoadingDuration);
-
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    if (hoveredIndex !== null) {
+    const validProject = hoveredIndex !== null && projects[hoveredIndex];
+    if (validProject) {
       setText(`Project selected: ${projects[hoveredIndex].title}`);
       setShowImage(false);
       const timer = setTimeout(() => {
         setShowImage(true);
       }, 2000);
-
       return () => clearTimeout(timer);
     } else if (!loading) {
       setText('Select a project:');
@@ -39,9 +37,13 @@ const ProjectBox = ({ projects, hoveredIndex, boxRef }) => {
       typingText.style.width = '0';
       void typingText.offsetHeight;
       typingText.style.width = `${typingText.textContent.length}ch`;
-      typingText.style.animation = 'typing 1.5s steps(30, end) forwards, blink 1s step-end infinite 1.5s';
+      typingText.style.animation =
+        'typing 1.5s steps(30, end) forwards, blink 1s step-end infinite 1.5s';
     }
   }, [text]);
+
+  const validImage =
+    hoveredIndex !== null && projects[hoveredIndex]?.image && projects[hoveredIndex]?.title;
 
   return (
     <div className="project-box-container">
@@ -59,7 +61,7 @@ const ProjectBox = ({ projects, hoveredIndex, boxRef }) => {
           )}
           {!loading && <div className={`typing-text ${!loading ? 'blink' : ''}`}>{text}</div>}
         </div>
-        {showImage && hoveredIndex !== null && (
+        {showImage && validImage && (
           <img
             src={projects[hoveredIndex].image}
             alt={projects[hoveredIndex].title}
