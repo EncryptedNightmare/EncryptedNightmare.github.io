@@ -1,5 +1,6 @@
 {
   "name": "portfolio-project",
+  "homepage": "https://EncryptedNightmare.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -51,6 +52,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/react-hooks": "^8.0.1",
+    "gh-pages": "^6.3.0",
     "jest": "^27.5.1",
     "tailwindcss": "^3.4.14"
   }
